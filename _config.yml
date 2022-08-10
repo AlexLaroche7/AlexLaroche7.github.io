@@ -7,13 +7,13 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Alex Laroche"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Alex Laroche"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://AlexLaroche7.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "AlexLaroche7/AlexLaroche7.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -80,15 +80,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Alex Laroche"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  bio              : "PhD Student at the University of Toronto, Department of Astronomy & Astrophysics"
+  location         : "Toronto, Canada"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  pubmed           : 
+  googlescholar    : "https://scholar.google.com/citations?user=Qs5DoBIAAAAJ&hl=en&oi=sra"
+  email            : "alex.laroche@mail.utoronto.ca"
+  researchgate     : 
   uri              :
   bitbucket        :
   codepen          :
@@ -96,27 +96,27 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "AlexLaroche7"
   google_plus      :
   keybase          :
   instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
+  impactstory      : 
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  linkedin         : "https://www.linkedin.com/in/alexander-laroche-105356173/?originalSubdomain=ca"
+  orcid            : "https://orcid.org/0000-0002-5522-0217"
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          :
   vine             :
   weibo            :
   xing             :
   youtube          :
   wikipedia        :
-
-
+  ads              : "https://ui.adsabs.harvard.edu/search/q=author%3A%22Laroche%2C%20Alexander%22%20(bibstem%3A%22MNRAS%22%20OR%20bibstem%3A%22arXiv%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0"
+  arxiv            : "https://arxiv.org/search/astro-ph?searchtype=author&query=Laroche%2C+A"
 # Reading Files
 include:
   - .htaccess
