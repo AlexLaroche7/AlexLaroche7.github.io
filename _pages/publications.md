@@ -4,9 +4,7 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-You can find links to my ADS, arXiv, Github, Google Scholar and ORCID on the left, where you can take a look at my publications. My papers are also listed below:
-
-<script src="https://github.com/AlexLaroche7/AlexLaroche7.github.io/blob/master/files/papers.bib"></script>
+You can take a look at my publications with the links to my ADS, arXiv, INSPIRE, Google Scholar and ORCID profiles which are to the bottom left of this page. My papers are also listed below:
 {% include base_path %}
 
-
+{% for post in site.publications reversed %} {% include archive-single.html %} {% endfor %}

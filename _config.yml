@@ -117,6 +117,7 @@ author:
   wikipedia        :
   ads              : "https://ui.adsabs.harvard.edu/search/q=author%3A%22Laroche%2C%20Alexander%22%20(bibstem%3A%22MNRAS%22%20OR%20bibstem%3A%22arXiv%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0"
   arxiv            : "https://arxiv.org/search/astro-ph?searchtype=author&query=Laroche%2C+A"
+  inspire          : "https://inspirehep.net/authors/2100102"
 # Reading Files
 include:
   - .htaccess

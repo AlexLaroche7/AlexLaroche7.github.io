@@ -23,7 +23,7 @@ Ultra-light dark matter (ULDM) is a dark matter canditate made of ultra-light bo
 
 ## 21cm cosmology
 ----
-Observations of the redshifted 21cm line have the potential to revolutionize our understanding of the early Universe. 21cm cosmologists are primarily interested in measuring (i) 21cm intensity maps; the 21cm photon distrubition as a function of space and time, and (ii) the 21cm global signal; an all-sky measurement of the 21cm line. 
+Observations of the redshifted 21cm line have the potential to revolutionize our understanding of the early Universe. When a neutral hydrogen atom undergoes a spin-flip transiton, it emits a photon with a wavelength of roughly 21cm. The 21cm signal can therefore be used to map out the ionization history of the Universe. 21cm cosmologists are primarily interested in measuring (i) 21cm intensity maps; the 21cm photon distribution as a function of space and time, and (ii) the 21cm global signal; an all-sky measurement of the 21cm line. 
 
 ### Constraining density-ionization correlations during the Epoch of Reionization
 ----

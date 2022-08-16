@@ -1,6 +1,6 @@
 # main links links
 main:
-  - title: "Home"
+  - title: "About"
     url: /about/
 
   - title: "Publications"
@@ -8,9 +8,6 @@ main:
 
   - title: "Research"
     url: /research/
-
-  - title: "Talks"
-    url: /talks/      
     
   - title: "CV"
-    url: /cv/
+    url: /files/academic_cv.pdf
