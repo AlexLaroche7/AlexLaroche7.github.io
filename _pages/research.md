@@ -27,7 +27,7 @@ Ultra-light dark matter (ULDM) is a dark matter canditate made of ultra-light bo
 <center>
   <figure style="width:800px">
 	  <img src="/images/uldm_sims.png" alt="ULDM simulations">
-	  <figcaption>2-D simulation of ultra-light dark matter halo substructure for different ultra-light boson masses. Credit: <a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220611269L/abstract">Laroche et al. (2022)</a>.</figcaption>
+	  <figcaption>2-D simulations of ultra-light dark matter halo substructure for different ultra-light boson masses. Credit: <a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220611269L/abstract">Laroche et al. (2022)</a>.</figcaption>
       </figure>
         </center>
 
@@ -37,7 +37,7 @@ Observations of the redshifted 21cm line have the potential to revolutionize our
 
 ### Constraining density-ionization correlations during the Epoch of Reionization
 ----
-I completed my undergraduate thesis, titled "Quantifying Density-Ionization Correlations with the 21cm Power Spectrum While Including X-ray Heating Effects," under the supervision of [Adrian Liu](http://www.physics.mcgill.ca/~acliu/). The Epoch of Reionization (EoR) is a period in the Universe's history when neutral hydrogen was systematically ionized. Reionization did not occur uniformly throughout Universe. Rather, small ionized bubbles formed and grew to eventually ionize the entire intergalactic medium. The relationship between these ionized bubbles (the ionization field) and the matter density field during the EoR can be understood with 21cm intensity mapping, but has yet to be constrained by experiments. My thesis showed that upcoming measurements of the 21cm power spectrum with the [Hydrogen Epoch of Reionization Array (HERA)](https://reionization.org/) will be able to constrain density-ionization correlations, while incorporating X-ray heating effects.
+I completed my undergraduate thesis, titled "Quantifying Density-Ionization Correlations with the 21cm Power Spectrum While Including X-ray Heating Effects," under the supervision of [Adrian Liu](http://www.physics.mcgill.ca/~acliu/). My thesis investigated the Epoch of Reionization (EoR); a period in the Universe's history when neutral hydrogen was systematically ionized. Reionization did not occur uniformly throughout Universe. Rather, small ionized bubbles formed and grew to eventually ionize the entire intergalactic medium. The relationship between these ionized bubbles (the ionization field) and the matter density field during the EoR can be understood with 21cm intensity mapping, but has yet to be constrained by experiments. My thesis showed that upcoming measurements of the 21cm power spectrum with the [Hydrogen Epoch of Reionization Array (HERA)](https://reionization.org/) will be able to constrain density-ionization correlations, while incorporating X-ray heating effects.
 
 <center>
   <figure style="width:800px">
