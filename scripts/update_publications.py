@@ -1,0 +1,163 @@
+"""Regenerate _data/publications.yml from Alex Laroche's ADS library.
+
+Usage:
+    ADS_TOKEN=... python scripts/update_publications.py
+
+The token comes from https://ui.adsabs.harvard.edu/user/settings/token.
+The GitHub Action in .github/workflows/update-publications.yml runs this
+weekly with the token stored as the repository secret ADS_TOKEN.
+
+Per-paper notes (e.g. "Submitted to ApJ") live in _data/publication_notes.yml,
+keyed by bibcode or arXiv id, so they survive regeneration.
+"""
+import json
+import os
+import re
+import sys
+import urllib.request
+from pathlib import Path
+
+LIBRARY_ID = "8zUtfV-GT9KVqGIFMyOYVw"
+ME = "Laroche, A"
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "_data" / "publications.yml"
+FIELDS = "bibcode,title,author,year,pub,volume,page,doi,identifier,pubdate,doctype"
+
+JOURNALS = {
+    "The Astrophysical Journal": "ApJ",
+    "The Astrophysical Journal Supplement Series": "ApJS",
+    "The Astrophysical Journal Letters": "ApJL",
+    "The Astronomical Journal": "AJ",
+    "Monthly Notices of the Royal Astronomical Society": "MNRAS",
+    "Astronomy and Astrophysics": "A&A",
+    "Publications of the Astronomical Society of the Pacific": "PASP",
+    "Machine Learning for Astrophysics": "ICML 2023 Workshop on Machine Learning for Astrophysics",
+}
+RANK = {"article": 0, "inproceedings": 1, "eprint": 2}  # lower wins when merging duplicates
+
+
+def fetch_library(token):
+    url = (f"https://api.adsabs.harvard.edu/v1/biblib/libraries/{LIBRARY_ID}"
+           f"?rows=500&fl={FIELDS}")
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+    with urllib.request.urlopen(req) as r:
+        return json.load(r)["solr"]["response"]["docs"]
+
+
+def clean_title(t):
+    t = re.sub(r"\$\\textit\{(.*?)\}\$", r"\1", t)
+    t = re.sub(r"<[^>]+>", "", t)
+    return t.strip()
+
+
+def short_name(full):
+    last, _, first = full.partition(",")
+    initials = " ".join(p[0] + "." for p in re.split(r"[\s\-]+", first.strip()) if p and p[0].isalpha())
+    return f"{initials} {last.strip()}".strip()
+
+
+def norm(t):
+    return re.sub(r"[^a-z0-9]", "", clean_title(t).lower().replace("haloes", "halos"))
+
+
+def arxiv_id(doc):
+    for i in doc.get("identifier", []):
+        if i.startswith("arXiv:"):
+            return i[6:]
+    return None
+
+
+def load_notes():
+    p = ROOT / "_data" / "publication_notes.yml"
+    notes = {}
+    if p.exists():
+        for line in p.read_text().splitlines():
+            m = re.match(r'^"?([^":#]+)"?\s*:\s*"(.*)"\s*$', line)
+            if m:
+                notes[m.group(1).strip()] = m.group(2)
+    return notes
+
+
+def build(docs):
+    notes = load_notes()
+    merged = {}
+    for d in docs:
+        if d.get("doctype") not in RANK:  # skip software, abstracts, etc.
+            continue
+        key = norm(d["title"][0])
+        aid = arxiv_id(d)
+        if key in merged:
+            keep = merged[key]
+            if RANK[d["doctype"]] < RANK[keep["doctype"]]:
+                d.setdefault("_arxiv", keep.get("_arxiv") or arxiv_id(keep))
+                merged[key] = d
+            else:
+                keep.setdefault("_arxiv", aid)
+                if not keep.get("_arxiv"):
+                    keep["_arxiv"] = aid
+            continue
+        d["_arxiv"] = aid
+        merged[key] = d
+
+    entries = []
+    for d in merged.values():
+        authors = d.get("author", [])
+        pos = next((i for i, a in enumerate(authors) if a.startswith(ME)), None)
+        names = [short_name(a) for a in authors]
+        if pos is not None:
+            names[pos] = "**A. Laroche**"
+        if len(names) > 8:
+            shown = names[:6]
+            if pos is not None and pos >= 6:
+                shown.append(names[pos])
+            names = shown + [f"et al. ({len(authors)} authors)"]
+        pub = d.get("pub", "")
+        aid = d.get("_arxiv")
+        if d["doctype"] == "eprint":
+            venue = notes.get(d["bibcode"]) or notes.get(aid or "") or "arXiv preprint"
+        else:
+            venue = JOURNALS.get(pub, pub)
+            if d.get("volume"):
+                venue += f" {d['volume']}, {d.get('page', [''])[0]}"
+            note = notes.get(d["bibcode"]) or notes.get(aid or "")
+            if note:
+                venue += f" ({note})"
+        entries.append({
+            "title": clean_title(d["title"][0]),
+            "authors": ", ".join(names),
+            "venue": venue,
+            "year": int(d["year"]),
+            "date": d.get("pubdate", "")[:7],
+            "first_author": pos == 0,
+            "ads": f"https://ui.adsabs.harvard.edu/abs/{d['bibcode']}/abstract",
+            "arxiv": f"https://arxiv.org/abs/{aid}" if aid else None,
+            "doi": (f"https://doi.org/{d['doi'][0]}"
+                    if d.get("doi") and d["doctype"] != "eprint" else None),
+        })
+    entries.sort(key=lambda e: e["date"], reverse=True)
+    return entries
+
+
+def to_yaml(entries):
+    out = ["# Generated by scripts/update_publications.py from the ADS library. Do not edit by hand."]
+    for e in entries:
+        out.append("- title: " + json.dumps(e["title"], ensure_ascii=False))
+        for k in ["authors", "venue", "year", "date", "first_author", "ads", "arxiv", "doi"]:
+            v = e[k]
+            if v is None:
+                continue
+            out.append(f"  {k}: " + (json.dumps(v, ensure_ascii=False) if isinstance(v, str)
+                                     else str(v).lower() if isinstance(v, bool) else str(v)))
+    return "\n".join(out) + "\n"
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:  # optional: build from a saved JSON dump of library docs
+        docs = json.load(open(sys.argv[1]))
+    else:
+        token = os.environ.get("ADS_TOKEN")
+        if not token:
+            sys.exit("Set ADS_TOKEN (https://ui.adsabs.harvard.edu/user/settings/token)")
+        docs = fetch_library(token)
+    OUT.write_text(to_yaml(build(docs)))
+    print(f"Wrote {OUT}")

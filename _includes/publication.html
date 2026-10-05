@@ -1,0 +1,10 @@
+<li class="pub">
+  <span class="pub__title">{{ include.pub.title }}</span><br>
+  <span class="pub__authors">{{ include.pub.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span><br>
+  <span class="pub__venue">{{ include.pub.venue }}, {{ include.pub.year }}</span>
+  <span class="pub__links">
+    {% if include.pub.ads %}<a href="{{ include.pub.ads }}">ADS</a>{% endif %}
+    {% if include.pub.arxiv %}<a href="{{ include.pub.arxiv }}">arXiv</a>{% endif %}
+    {% if include.pub.doi %}<a href="{{ include.pub.doi }}">Journal</a>{% endif %}
+  </span>
+</li>

@@ -4,4 +4,21 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-My most up-to-date list of publications can be found on [ADS](https://ui.adsabs.harvard.edu/user/libraries/8zUtfV-GT9KVqGIFMyOYVw) or [arXiv](https://arxiv.org/search/astro-ph?searchtype=author&query=Laroche,+A).
+
+This list is generated from my [ADS library](https://ui.adsabs.harvard.edu/user/libraries/8zUtfV-GT9KVqGIFMyOYVw); papers are also listed on [arXiv](https://arxiv.org/a/laroche_a_1) and [Google Scholar](https://scholar.google.com/citations?user=Qs5DoBIAAAAJ&hl=en).
+
+## First-author
+
+<ol class="pub-list">
+{% for p in site.data.publications %}{% if p.first_author %}
+  {% include publication.html pub=p %}
+{% endif %}{% endfor %}
+</ol>
+
+## Contributing author
+
+<ol class="pub-list">
+{% for p in site.data.publications %}{% unless p.first_author %}
+  {% include publication.html pub=p %}
+{% endunless %}{% endfor %}
+</ol>

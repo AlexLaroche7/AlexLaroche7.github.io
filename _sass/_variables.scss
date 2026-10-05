@@ -47,24 +47,25 @@ $type-size-8                : 0.625em;  // ~10px
    Colors
    ========================================================================== */
 
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+/* dark palette: the gray ramp runs light-on-dark */
+$gray                       : #8b949e;
+$dark-gray                  : #c9d1d9;
+$darker-gray                : #e6edf3;
+$light-gray                 : #6e7681;
+$lighter-gray               : #30363d;
 
-$body-color                 : #fff;
-$background-color           : #fff;
-$code-background-color      : #fafafa;
-$code-background-color-dark : $light-gray;
+$body-color                 : #0d1117;
+$background-color           : #0d1117;
+$code-background-color      : #161b22;
+$code-background-color-dark : #21262d;
 $text-color                 : $dark-gray;
 $border-color               : $lighter-gray;
 
-$primary-color              : #7a8288;
+$primary-color              : #8b949e;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
-$info-color                 : #52adc8;
+$info-color                 : #6cb6e6;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -91,10 +92,10 @@ $xing-color                 : #006567;
 
 /* links */
 $link-color                 : $info-color;
-$link-color-hover           : mix(#000, $link-color, 25%);
-$link-color-visited         : mix(#fff, $link-color, 25%);
+$link-color-hover           : mix(#fff, $link-color, 30%);
+$link-color-visited         : $link-color;
 $masthead-link-color        : $primary-color;
-$masthead-link-color-hover  : mix(#000, $primary-color, 25%);
+$masthead-link-color-hover  : $darker-gray;
 
 
 /*
