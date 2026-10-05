@@ -48,3 +48,7 @@ h1, h2, h3, h4, .page__title { color: $darker-gray; }
 .pub__authors strong { color: $darker-gray; }
 .pub__venue { font-style: italic; }
 .pub__links a { margin-left: 0.6em; font-size: $type-size-6; }
+
+/* icons that default to near-black */
+.author__urls .fa-map-marker, .author__urls .fa-map-marker-alt { color: $text-color; }
+.page__footer { border-top: 1px solid $border-color; }

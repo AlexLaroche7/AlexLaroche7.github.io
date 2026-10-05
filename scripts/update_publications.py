@@ -106,7 +106,7 @@ def build(docs):
         names = [short_name(a) for a in authors]
         if pos is not None:
             names[pos] = "**A. Laroche**"
-        if len(names) > 8:
+        if len(names) > 10:
             shown = names[:6]
             if pos is not None and pos >= 6:
                 shown.append(names[pos])

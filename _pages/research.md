@@ -7,7 +7,7 @@ author_profile: true
 
 I study binary interaction: how mass transfer and common envelope evolution change the structure, evolution and final fates of stars. My work combines targeted observations of small samples of binary interaction products with data-driven methods for large surveys. A full list of papers is on the [publications](/publications/) page.
 
-<div class="project" markdown="1">
+<div class="project">
 <img class="project__img" src="/images/research/stripped_stars.png" alt="Companion mass versus stripped-star mass for a binary-stripped helium star">
 <div class="project__text" markdown="1">
 ### Intermediate-mass helium stars in the Magellanic Clouds
@@ -18,7 +18,7 @@ I study binary interaction: how mass transfer and common envelope evolution chan
 </div>
 </div>
 
-<div class="project" markdown="1">
+<div class="project">
 <img class="project__img" src="/images/research/xp_svae.png" alt="Diagram of the scatter variational auto-encoder for Gaia XP spectra">
 <div class="project__text" markdown="1">
 ### Data-driven models for *Gaia* XP spectra
@@ -31,7 +31,7 @@ Data-driven models of stellar spectra are usually trained to map stellar labels 
 
 ## Undergraduate research
 
-<div class="project" markdown="1">
+<div class="project">
 <img class="project__img" src="/images/research/uldm.jpg" alt="Simulated ultra-light dark matter halo density">
 <div class="project__text" markdown="1">
 ### Ultra-light dark matter and strong lensing
@@ -42,7 +42,7 @@ With Jo Bovy and Daniel Gilman, I used the flux ratios of eleven quadruply-image
 </div>
 </div>
 
-<div class="project" markdown="1">
+<div class="project">
 <img class="project__img" src="/images/research/eor.jpg" alt="Simulated 21cm brightness temperature during reionization">
 <div class="project__text" markdown="1">
 ### 21cm cosmology

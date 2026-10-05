@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-This list is generated from my [ADS library](https://ui.adsabs.harvard.edu/user/libraries/8zUtfV-GT9KVqGIFMyOYVw); papers are also listed on [arXiv](https://arxiv.org/a/laroche_a_1) and [Google Scholar](https://scholar.google.com/citations?user=Qs5DoBIAAAAJ&hl=en).
+This list is generated from my [ADS library](https://ui.adsabs.harvard.edu/user/libraries/8zUtfV-GT9KVqGIFMyOYVw); papers are also listed on [arXiv](https://arxiv.org/search/astro-ph?searchtype=author&query=Laroche%2C+A) and [Google Scholar](https://scholar.google.com/citations?user=Qs5DoBIAAAAJ&hl=en).
 
 ## First-author
 
