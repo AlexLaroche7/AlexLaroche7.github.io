@@ -8,7 +8,7 @@ author_profile: true
 I study binary interaction: how mass transfer and common envelope evolution change the structure, evolution and final fates of stars. My work combines targeted observations of small samples of binary interaction products with data-driven methods for large surveys. A full list of papers is on the [publications](/publications/) page.
 
 <div class="project">
-<img class="project__img" src="/images/research/stripped_stars.png" alt="Companion mass versus stripped-star mass for a binary-stripped helium star">
+<img class="project__img" src="/images/research/he_star_orbits.png" alt="Phase-folded radial velocity curves for five helium stars in binaries">
 <div class="project__text" markdown="1">
 ### Intermediate-mass helium stars in the Magellanic Clouds
 
