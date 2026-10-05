@@ -7,7 +7,7 @@ Jekyll site (AcademicPages fork) published by GitHub Pages from `master` at http
 - `_data/navigation.yml`: top nav (Research, Publications, CV, Misc).
 - `_config.yml`: site settings and sidebar author links (Email, ADS, arXiv, GitHub, ORCID). LinkedIn, INSPIRE and Google Scholar were removed on purpose.
 - `_sass/_variables.scss` sets the dark palette; site-specific styles live in `_sass/_custom.scss`.
-- `images/misc/`: figures for the Misc essays. `arxiv_submissions.png` is drawn from arXiv's monthly and per-category submission statistics.
+- `images/misc/`: figures for the Misc essays. `arxiv_submissions.png` is frozen at September 2026 to match the AI essay's text; rebuild it with `python scripts/make_arxiv_plot.py --through 2026-09 --out images/misc/arxiv_submissions.png`. A plain run of the script plots the latest complete month to `arxiv_submissions_<month>.png` in the current directory (needs `numpy` and `matplotlib`).
 - `images/research/`: thumbnails for the research page blocks, plus `wordcloud.png`, built by `scripts/make_wordcloud.py` from the arXiv abstracts of all papers in `_data/publications.yml` (needs `pip install wordcloud`; rerun after a new paper).
 - `images/profile.jpg`: sidebar photo (GitHub avatar). `_sass/_custom.scss` crops it square so it renders as a circle.
 - `files/academic_cv.pdf`: CV, built in Overleaf and replaced by hand for now.
