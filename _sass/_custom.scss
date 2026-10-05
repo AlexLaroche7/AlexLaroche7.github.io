@@ -12,6 +12,9 @@ h1, h2, h3, h4, .page__title { color: $darker-gray; }
 .author__urls { background: $background-color; }
 .author__urls-wrapper button { color: $text-color; background: $code-background-color; border-color: $border-color; }
 
+/* crop the photo to a square so it always renders as a circle, not an oval */
+.author__avatar img { aspect-ratio: 1 / 1; object-fit: cover; }
+
 /* research project blocks: image left, text right; stacked on narrow screens */
 .project {
   display: flex;
@@ -37,6 +40,63 @@ h1, h2, h3, h4, .page__title { color: $darker-gray; }
 @media (max-width: 700px) {
   .project { flex-direction: column; }
   .project__img { max-width: 100%; flex-basis: auto; }
+}
+
+/* research page word cloud: transparent PNG drawn for the dark background */
+.wordcloud {
+  margin: 1.5em 0 2em;
+  img { width: 100%; }
+  figcaption { text-align: center; color: $gray; font-size: $type-size-6; }
+}
+
+/* figures inside essays: plots drawn for white paper get a white card */
+.essay-fig {
+  display: block;            /* the theme lays figures out as a row */
+  margin: 1.5em 0 2em;
+  img { display: block; width: 100%; max-width: 440px; margin: 0 auto; background: #fff; border-radius: $border-radius; padding: 6px; }
+  figcaption { margin-top: 0.5em; text-align: center; color: $gray; font-size: $type-size-6; }
+}
+/* plots already drawn for the dark background skip the white card */
+.essay-fig--dark img { background: none; padding: 0; max-width: 760px; }  /* wide two-panel plot */
+
+/* embedded talk videos keep a 16:9 frame at any width */
+.video {
+  margin: 1em 0;
+  iframe { width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: $border-radius; }
+}
+
+/* publications: citations per year as plain CSS bars */
+.cite-chart {
+  display: block;            /* the theme lays figures out as a row */
+  margin: 1.5em 0 2em;
+  figcaption { margin-top: 2em; text-align: center; color: $gray; font-size: $type-size-6; }
+}
+.cite-chart__bars {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6em;
+  height: 160px;
+  padding-bottom: 1.6em;   /* room for the year labels */
+  border-bottom: 1px solid $border-color;
+}
+.cite-chart__col {
+  flex: 1;
+  max-width: 70px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.cite-chart__bar { width: 100%; min-height: 2px; background: $link-color; border-radius: 3px 3px 0 0; }
+.cite-chart__n { font-size: $type-size-6; color: $text-color; margin-bottom: 0.2em; }
+.cite-chart__year { position: absolute; bottom: -1.6em; font-size: $type-size-7; color: $gray; }
+
+/* footnotes: the theme's default is too small to read comfortably */
+.footnotes {
+  ol, li, p { font-size: $type-size-5; }
 }
 
 /* publications */
