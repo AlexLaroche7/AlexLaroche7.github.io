@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Site-specific styles: dark scheme fixes, research blocks, publication list
+   ========================================================================== */
+
+:root { color-scheme: dark; }
+
+h1, h2, h3, h4, .page__title { color: $darker-gray; }
+
+.masthead { background-color: $background-color; }
+
+/* author sidebar: keep the photo and icons readable on dark */
+.author__urls { background: $background-color; }
+.author__urls-wrapper button { color: $text-color; background: $code-background-color; border-color: $border-color; }
+
+/* research project blocks: image left, text right; stacked on narrow screens */
+.project {
+  display: flex;
+  gap: 1.5em;
+  align-items: flex-start;
+  margin: 1.5em 0 2em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid $border-color;
+
+  h3 { margin-top: 0; }
+}
+
+.project__img {
+  flex: 0 0 34%;
+  max-width: 34%;
+  background: #fff;          /* figures are drawn for white paper */
+  border-radius: $border-radius;
+  padding: 6px;
+}
+
+.project__text { flex: 1; min-width: 0; }
+
+@media (max-width: 700px) {
+  .project { flex-direction: column; }
+  .project__img { max-width: 100%; flex-basis: auto; }
+}
+
+/* publications */
+.pub-list {
+  padding-left: 1.4em;
+  .pub { margin-bottom: 1em; line-height: 1.45; }
+}
+.pub__title { color: $darker-gray; font-weight: 600; }
+.pub__authors strong { color: $darker-gray; }
+.pub__venue { font-style: italic; }
+.pub__links a { margin-left: 0.6em; font-size: $type-size-6; }
+
+/* icons that default to near-black */
+.author__urls .fa-map-marker, .author__urls .fa-map-marker-alt { color: $text-color; }
+.page__footer { border-top: 1px solid $border-color; }

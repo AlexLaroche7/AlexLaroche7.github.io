@@ -5,59 +5,48 @@ permalink: /research/
 author_profile: true
 ---
 
-{% include base_path %}
+I study binary interaction: how mass transfer and common envelope evolution change the structure, evolution and final fates of stars. My work combines targeted observations of small samples of binary interaction products with data-driven methods for large surveys. A full list of papers is on the [publications](/publications/) page.
 
-## Data-driven, generative models for low-resolution spectra
-----
-![image](/images/xp_gif.gif){: style="float: left; margin-right: 1em;"}
+<div class="project">
+<img class="project__img" src="/images/research/he_star_orbits.png" alt="Phase-folded radial velocity curves for five helium stars in binaries">
+<div class="project__text" markdown="1">
+### Intermediate-mass helium stars in the Magellanic Clouds
 
-Data-driven models for stellar spectra which depend on stellar labels suffer from label systematics which decrease model performance: the “stellar labels gap”. To close the stellar labels gap, we present a stellar label independent model for *Gaia* BP/RP spectra. We develop a novel implementation of a variational auto-encoder, which learns to generate an XP spectrum and accompanying ‘scatter’ without relying on stellar labels. We demonstrate that our model achieves competitive XP spectra reconstructions in comparison to stellar label dependent models. We find that our model learns stellar properties directly from the data itself. We then apply our model to XP/APOGEE giant stars to study the [$\alpha$/M] information in *Gaia* XP. We provide strong evidence that the XP spectra contain meaningful [$\alpha$/M] information by demonstrating that our model learns the $\alpha$-bimodality, without relying on stellar label correlations for stars with $T_{\rm eff} <$ 5000 K, while also being sensitive to the anomalous abundances of *Gaia*-Enceladus stars. We publicly release our trained model, codebase and data. Importantly, our stellar label independent model can be implemented for any/all XP spectra because our model performance scales with training object density, not training label density. *[Image credit: ESA/Gaia/DPAC, Creevey et al. 2022, Rene Andrea]*
+[Drout et al. (2023)](https://www.science.org/doi/10.1126/science.ade4970) and [Götberg et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023ApJ...959..125G/abstract) discovered a population of hot, helium-rich stars of roughly 2 to 8 solar masses in the Magellanic Clouds, which are thought to have lost their hydrogen envelopes to a binary companion. Using multi-epoch Magellan/MagE spectroscopy, I measured radial velocities for eight of these helium stars. Five are in binaries with orbital periods from 16 hours to 300 days and companions that are invisible in the optical spectra, while three show no binary motion. The binaries are hydrogen-poor and the apparently single stars are nearly hydrogen-free, which suggests that the two groups formed through different evolutionary pathways. I also contribute to the [Stripped-Star Ultraviolet Magellanic Cloud Survey](https://ui.adsabs.harvard.edu/abs/2026ApJ...999...73L/abstract) led by Bethany Ludwig, which selects new stripped-star candidates by their UV excess.
 
-Read **Laroche** & Speagle (2024) [here](https://ui.adsabs.harvard.edu/abs/2024arXiv240407316L/abstract).
+**Laroche** et al. (2026), [arXiv:2609.30384](https://arxiv.org/abs/2609.30384)
+</div>
+</div>
 
-----
-## Data-driven modeling of carbon-enhanced metal poor stars
+<div class="project">
+<img class="project__img" src="/images/research/xp_svae.png" alt="Diagram of the scatter variational auto-encoder for Gaia XP spectra">
+<div class="project__text" markdown="1">
+### Data-driven models for *Gaia* XP spectra
 
-Under construction.
+Data-driven models of stellar spectra are usually trained to map stellar labels to spectra, so their performance is limited by the systematics in those labels. With Josh Speagle, I developed a variational auto-encoder that learns to generate *Gaia* BP/RP (XP) spectra and their scatter without relying on stellar labels. The model reconstructs XP spectra as well as label-dependent models, and when applied to giant stars with APOGEE abundances it recovers the [α/M] bimodality, showing that XP spectra contain [α/M] information. Because the model needs only spectra to train, it can be applied to any of the roughly 220 million stars with XP spectra. I am also applying autoencoders to find unresolved binaries in survey photometry with Tobias Géron, starting with Rubin observations of 47 Tucanae.
 
-----
-## Binary-stripped helium stars
+**Laroche** & Speagle (2025), [ApJ 979, 5](https://ui.adsabs.harvard.edu/abs/2025ApJ...979....5L/abstract); **Laroche** & Speagle (2023), [ICML ML4Astro workshop](https://arxiv.org/abs/2307.06378); Géron, **Laroche** et al. (2026), [arXiv:2609.05616](https://arxiv.org/abs/2609.05616)
+</div>
+</div>
 
-Under construction.
+## Undergraduate research
 
-----
+<div class="project">
+<img class="project__img" src="/images/research/uldm.jpg" alt="Simulated ultra-light dark matter halo density">
+<div class="project__text" markdown="1">
+### Ultra-light dark matter and strong lensing
 
-# Undergraduate Research
+With Jo Bovy and Daniel Gilman, I used the flux ratios of eleven quadruply-imaged quasars to constrain ultra-light dark matter, including the wave-interference fluctuations in the host halo density profile, calibrated against simulations. The fluctuations change the inferred particle mass substantially, but the data still disfavor masses below 10<sup>−21.5</sup> eV.
 
-## Constraining ultra-light dark matter with quadruply-imaged quasars
-----
-![image](/images/uldm_sims.png){: style="float: left; margin-right: 1em; width: 600px"}
+**Laroche** et al. (2022), [MNRAS 517, 1867](https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.1867L/abstract)
+</div>
+</div>
 
-Ultra-light dark matter (ULDM) refers to a class of theories, including ultra-light axions, in which particles with mass $m_{\psi} < 10^{-20}\, \rm{eV}$ comprise a significant fraction of the dark matter. A galactic scale de Broglie wavelength distinguishes these theories from cold dark matter (CDM), suppressing the overall abundance of structure on sub-galactic scales, and producing wave-like interference phenomena in the density profiles of halos. With the aim of constraining the particle mass, we analyze the flux ratios in a sample of eleven quadruple-image strong gravitational lenses. We account for the suppression of the halo mass function and concentration-mass relation predicted by ULDM theories, and the wave-like fluctuations in the host halo density profile, calibrating the model for the wave interference against numerical simulations of galactic-scale halos. We show that the granular structure of halo density profiles, in particular, the amplitude of the fluctuations, significantly impacts image flux ratios, and therefore inferences on the particle mass derived from these data. We infer relative likelihoods of CDM to ULDM of 8:1, 7:1, 6:1, and 4:1 for particle masses $\log_{10}(m_\psi/\rm{eV})\in[-22.5,-22.25], [-22.25,-22.0],[-22.0,-21.75], [-21.75,-21.5]$, respectively. Repeating the analysis and omitting fluctuations associated with the wave interference effects, we obtain relative likelihoods of CDM to ULDM with a particle mass in the same ranges of 98:1, 48:1, 26:1 and 18:1, highlighting the significant perturbation to image flux ratios associated with the fluctuations. Nevertheless, our results disfavor the lightest particle masses with $m_{\psi} < 10^{-21.5}\,\rm{eV}$, adding to mounting pressure on ultra-light axions as a viable dark matter candidate.
+<div class="project">
+<img class="project__img" src="/images/research/eor.jpg" alt="Simulated 21cm brightness temperature during reionization">
+<div class="project__text" markdown="1">
+### 21cm cosmology
 
-Read **Laroche** et al. (2023) [here](https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.1867L/abstract).
-
-----
-## Quantifying density-ionization correlations with the 21cm power spectrum while including X-ray heating effects
-----
-![image](/images/eor_sims.png){: style="float: left; margin-right: 1em; width: 600px"}
-
-Observations of the redshifted 21cm line will soon allow us to probe the physics of the early Universe at unprecedented scales.
-In particular, the 21cm signal will tell us about the physics of the Epoch of Reionization (EoR), during which time the first
-stars systemically ionized the intergalactic medium. Most models predict a tight correlation between the ionization and density
-fields during the EoR, upon which the 21cm signal is highly dependent. We extend a parametrization for the density-ionization
-correlations by including X-ray heating effects, which also significantly influence the 21cm signal. We develop forecasts for
-the ability of observations to constrain these correlations while accounting for X-ray sources. We find that measurements on
-the dimensionless power spectrum at redshifts $7.5 \leq z \leq 8.5$ and $13 \leq z \leq 14$ with error bars on the order of $\sim10$ mK$^2$
-about our fiducial model can place strong constraints on density-ionization correlations, while accounting for X-ray heating
-effects. This demonstrates that the Epoch of Heating (EoH) can also constrain density-ionization correlations. We find that the
-Hydrogen Epoch of Reionization Array (HERA) will be able to significantly constrain density-ionization correlations and several
-astrophysical parameters related to X-ray heating.
-
-## Measuring the global 21cm signal
-----
-![image](/images/prizm.jpeg){: style="float: left; margin-right: 1em; width: 500px"}
-
-While working as a research assistant in the McGill Radio Lab, under the supervision of [Jonathan Sievers](https://www.physics.mcgill.ca/~sievers/), I performed data selection and analysis for the [Probing Radio Intensity at high-Z from Marion (PRIZM)](https://arxiv.org/abs/1806.09531) experiment. PRIZM is a global 21cm telescope which seeks to measure the global 21cm signal during Cosmic Dawn, a loosely defined period in the Universe's history (including the EoR) when the first stars formed and 'lit up' our previously dark Universe. Clean measurements of global 21cm signal are _very_ hard to achieve. For instance, experiments must contend with radio frequency interference (RFI) and galactic foregrounds. My work involed writing code to efficiently process both on-sky spectra and antenna data. *[Image credit: AstroMcGill, Cynthia Chiang]*
-
-----
+In Adrian Liu's group, I extended a parametrization of density-ionization correlations during the Epoch of Reionization to include X-ray heating, and forecast how well HERA can constrain these correlations. In the McGill Radio Lab with Jonathan Sievers, I processed spectra and antenna data for [PRIZM](https://arxiv.org/abs/1806.09531), an experiment measuring the global 21cm signal from Cosmic Dawn.
+</div>
+</div>

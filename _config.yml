@@ -10,10 +10,10 @@ locale                   : "en-US"
 title                    : "Alex Laroche"
 title_separator          : "-"
 name                     : &name "Alex Laroche"
-description              : &description "personal description"
-url                      : https://AlexLaroche7.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : &description "Alex Laroche, PhD Candidate in Astronomy & Astrophysics at the University of Toronto"
+url                      : https://alexanderlaroche.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "AlexLaroche7/AlexLaroche7.github.io"
+repository               : "AlexanderLaroche/alexanderlaroche.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -73,7 +73,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               :  false # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          :
 
@@ -86,7 +86,7 @@ author:
   location         : "Toronto, Canada"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=Qs5DoBIAAAAJ&hl=en&oi=sra"
+  googlescholar    :
   email            : "alex.laroche@mail.utoronto.ca"
   researchgate     : 
   uri              :
@@ -96,13 +96,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "AlexLaroche7"
+  github           : "AlexanderLaroche"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : 
   lastfm           :
-  linkedin         : "www.linkedin.com/in/alexander-laroche-105356173"
+  linkedin         :
   orcid            : "https://orcid.org/0000-0002-5522-0217"
   pinterest        :
   soundcloud       :
@@ -117,7 +117,7 @@ author:
   wikipedia        :
   ads              : "https://ui.adsabs.harvard.edu/search/q=author%3A%22Laroche%2C%20Alexander%22%20(bibstem%3A%22MNRAS%22%20OR%20bibstem%3A%22arXiv%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0"
   arxiv            : "https://arxiv.org/search/astro-ph?searchtype=author&query=Laroche%2C+A"
-  inspire          : "https://inspirehep.net/authors/2100102"
+  inspire          :
 # Reading Files
 include:
   - .htaccess
@@ -175,19 +175,7 @@ kramdown:
 
 
 # Collections
-collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
-  publications:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
+collections: {}
 
 
 # Defaults
@@ -210,41 +198,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
 
 # Sass/SCSS
 sass:
@@ -256,7 +209,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Toronto # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
