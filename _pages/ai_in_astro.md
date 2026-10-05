@@ -5,6 +5,8 @@ permalink: /misc/ai-in-astro/
 author_profile: true
 ---
 
+*Written on October 5, 2026.*
+
 I'm still forming my thoughts on this, so I thought writing them down could help. First, to be clear, I'm not against AI in astronomy. My own research uses machine learning and takes advantage of these tools. At this point, I use them every day. However, I have become increasingly concerned about generative AI making papers and proposals much faster to pump out, but no faster to read, review or verify. It is not clear to me that this "more is more" approach is a good thing for astronomy, to put it mildly. Faster analysis and writing facilitates the ability to chunkify research into least publishable units (LPUs), which could subject the field to an increasing barrage of papers that contribute little, but still take time to read, referee and cite. After all, there is only so much time in a day. Before I go on, I will give the caveat that I am speculating. I have not yet seen strong, quantitative evidence for severe AI slopification in astronomy.
 
 ## The literature
