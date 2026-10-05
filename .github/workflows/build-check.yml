@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -20,16 +20,3 @@ jobs:
         with:
           name: site-preview
           path: _site
-      # Also publish the built site to the `site-preview` branch so it can be
-      # fetched with git and served locally (python3 -m http.server).
-      - name: Publish build to site-preview branch
-        if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
-        run: |
-          cd _site
-          sudo chown -R "$(id -u)" .
-          git init -q -b site-preview
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -qm "Preview build of ${GITHUB_SHA::7}"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" site-preview
