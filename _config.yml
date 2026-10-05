@@ -124,6 +124,8 @@ include:
   - _pages
   - files
 exclude:
+  - CLAUDE.md
+  - scripts
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
