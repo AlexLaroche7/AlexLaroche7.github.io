@@ -14,6 +14,6 @@ My research focuses on binary interaction: how the exchange of mass, energy and 
 
 I grew up in Montreal, Quebec, and graduated from [McGill University](https://www.mcgill.ca/) in 2022 with an Honours BSc in [Physics](https://www.physics.mcgill.ca/). As an undergraduate I worked on dark matter, strong gravitational lensing and 21cm cosmology in [Adrian Liu's](http://www.physics.mcgill.ca/~acliu/) and [Jonathan Sievers'](https://www.physics.mcgill.ca/~sievers/) groups at McGill and [Jo Bovy's](https://astro.utoronto.ca/~bovy/) group at UofT.
 
-Outside of astrophysics, I run (5k/10k/HM/M: 16:12/33:21/1:13/2:25).
+Outside of astrophysics, I run (5k/10k/HM/M: [16:12](https://sportstats.one/event/toronto-waterfront-marathon/leaderboard/142388?focus=20817&type=pid)/[33:21](https://sportstats.one/event/toronto-waterfront-10k/leaderboard/145774?focus=62&type=pid)/[1:13](https://sportstats.one/event/toronto-waterfront-marathon/leaderboard/144991?focus=14802&type=pid)/[2:25](https://myrace.ai/athletes/cim_2025/6085)).
 
 You can reach me at [alex.laroche@mail.utoronto.ca](mailto:alex.laroche@mail.utoronto.ca).
