@@ -10,7 +10,7 @@ This list is generated from my [ADS library](https://ui.adsabs.harvard.edu/user/
 ## First-author
 
 <ol class="pub-list">
-{% for p in site.data.publications %}{% if p.first_author %}
+{% for p in site.data.publications %}{% if p.first_author and p.conference != true %}
   {% include publication.html pub=p %}
 {% endif %}{% endfor %}
 </ol>
@@ -18,7 +18,15 @@ This list is generated from my [ADS library](https://ui.adsabs.harvard.edu/user/
 ## Contributing author
 
 <ol class="pub-list">
-{% for p in site.data.publications %}{% unless p.first_author %}
+{% for p in site.data.publications %}{% unless p.first_author or p.conference %}
   {% include publication.html pub=p %}
 {% endunless %}{% endfor %}
+</ol>
+
+## Conference proceedings
+
+<ol class="pub-list">
+{% for p in site.data.publications %}{% if p.conference %}
+  {% include publication.html pub=p %}
+{% endif %}{% endfor %}
 </ol>
