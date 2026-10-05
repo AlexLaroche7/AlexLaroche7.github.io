@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Alex Laroche"
-excerpt: "About"
+description: "Alex Laroche is a PhD candidate in Astronomy & Astrophysics at the University of Toronto who studies binary interaction, including intermediate-mass helium stars in the Magellanic Clouds and data-driven methods for Gaia spectra."
 author_profile: true
 redirect_from:
   - /about/
