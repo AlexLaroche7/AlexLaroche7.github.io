@@ -68,7 +68,8 @@ h1, h2, h3, h4, .page__title { color: $darker-gray; }
 /* publications: citations per year as plain CSS bars */
 .cite-chart {
   display: block;            /* the theme lays figures out as a row */
-  margin: 1.5em 0 2em;
+  max-width: 480px;          /* keep the bars and caption together on wide screens */
+  margin: 1.5em auto 2em;
   figcaption { margin-top: 2em; text-align: center; color: $gray; font-size: $type-size-6; }
 }
 .cite-chart__bars {
@@ -82,7 +83,7 @@ h1, h2, h3, h4, .page__title { color: $darker-gray; }
 }
 .cite-chart__col {
   flex: 1;
-  max-width: 70px;
+  max-width: 90px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -92,7 +93,7 @@ h1, h2, h3, h4, .page__title { color: $darker-gray; }
 }
 .cite-chart__bar { width: 100%; min-height: 2px; background: $link-color; border-radius: 3px 3px 0 0; }
 .cite-chart__n { font-size: $type-size-6; color: $text-color; margin-bottom: 0.2em; }
-.cite-chart__year { position: absolute; bottom: -1.6em; font-size: $type-size-7; color: $gray; }
+.cite-chart__year { position: absolute; bottom: -1.6em; font-size: $type-size-6; color: $gray; }
 
 /* footnotes: the theme's default is too small to read comfortably */
 .footnotes {
