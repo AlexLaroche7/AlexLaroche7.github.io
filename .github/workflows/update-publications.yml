@@ -22,8 +22,9 @@ jobs:
         run: python scripts/update_publications.py
       - name: Commit if changed
         run: |
-          if git diff --quiet; then echo "No changes"; exit 0; fi
+          if [ -z "$(git status --porcelain _data)" ]; then echo "No changes"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Update publications from ADS"
+          git add _data
+          git commit -m "Update publications from ADS"
           git push

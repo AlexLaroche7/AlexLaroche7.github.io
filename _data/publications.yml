@@ -6,6 +6,7 @@
   date: "2026-09"
   first_author: false
   conference: false
+  citations: 1
   ads: "https://ui.adsabs.harvard.edu/abs/2026ApJS..286...13V/abstract"
   arxiv: "https://arxiv.org/abs/2605.31290"
   doi: "https://doi.org/10.3847/1538-4365/ae8d04"
@@ -16,6 +17,7 @@
   date: "2026-09"
   first_author: false
   conference: false
+  citations: 0
   ads: "https://ui.adsabs.harvard.edu/abs/2026arXiv260905616G/abstract"
   arxiv: "https://arxiv.org/abs/2609.05616"
 - title: "Revealing Optically Hidden Companions to Intermediate-Mass Stripped Stars with Radial Velocities"
@@ -25,6 +27,7 @@
   date: "2026-09"
   first_author: true
   conference: false
+  citations: 0
   ads: "https://ui.adsabs.harvard.edu/abs/2026arXiv260930384L/abstract"
   arxiv: "https://arxiv.org/abs/2609.30384"
 - title: "A Framework for Linking Pre- and Post-Common Envelope Binary Properties with Star Clusters: The First Demonstration with a Massive White Dwarf+M Dwarf Binary in Alessi 12"
@@ -34,6 +37,7 @@
   date: "2026-07"
   first_author: false
   conference: false
+  citations: 0
   ads: "https://ui.adsabs.harvard.edu/abs/2026arXiv260720611G/abstract"
   arxiv: "https://arxiv.org/abs/2607.20611"
 - title: "The Stripped-star Ultraviolet Magellanic Cloud Survey (SUMS): The Ultraviolet Photometric Catalog and Stripped-star Candidate Selection"
@@ -43,6 +47,7 @@
   date: "2026-03"
   first_author: false
   conference: false
+  citations: 15
   ads: "https://ui.adsabs.harvard.edu/abs/2026ApJ...999...73L/abstract"
   arxiv: "https://arxiv.org/abs/2505.18632"
   doi: "https://doi.org/10.3847/1538-4357/ae2d13"
@@ -53,6 +58,7 @@
   date: "2025-06"
   first_author: false
   conference: false
+  citations: 3
   ads: "https://ui.adsabs.harvard.edu/abs/2025arXiv250614273E/abstract"
   arxiv: "https://arxiv.org/abs/2506.14273"
 - title: "Closing the Stellar Labels Gap: Stellar Label independent Evidence for [α/M] Information in Gaia BP/RP Spectra"
@@ -62,6 +68,7 @@
   date: "2025-01"
   first_author: true
   conference: false
+  citations: 13
   ads: "https://ui.adsabs.harvard.edu/abs/2025ApJ...979....5L/abstract"
   arxiv: "https://arxiv.org/abs/2404.07316"
   doi: "https://doi.org/10.3847/1538-4357/ad9607"
@@ -72,6 +79,7 @@
   date: "2023-07"
   first_author: true
   conference: true
+  citations: 5
   ads: "https://ui.adsabs.harvard.edu/abs/2023mla..confE..16L/abstract"
   arxiv: "https://arxiv.org/abs/2307.06378"
 - title: "Quantum fluctuations masquerade as haloes: bounds on ultra-light dark matter from quadruply imaged quasars"
@@ -81,6 +89,7 @@
   date: "2022-12"
   first_author: true
   conference: false
+  citations: 62
   ads: "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.1867L/abstract"
   arxiv: "https://arxiv.org/abs/2206.11269"
   doi: "https://doi.org/10.1093/mnras/stac2677"

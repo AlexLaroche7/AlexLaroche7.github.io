@@ -1,0 +1,19 @@
+{% comment %} Bar chart of citations per year from _data/citations.yml (written by scripts/update_publications.py). {% endcomment %}
+{% assign years = site.data.citations %}
+{% if years and years.size > 0 %}
+{% assign peak = 1 %}
+{% for y in years %}{% if y.citations > peak %}{% assign peak = y.citations %}{% endif %}{% endfor %}
+<figure class="cite-chart" aria-label="Citations per year">
+  <div class="cite-chart__bars">
+    {% for y in years %}
+    {% assign pct = y.citations | times: 100 | divided_by: peak %}
+    <div class="cite-chart__col">
+      <span class="cite-chart__n">{{ y.citations }}</span>
+      <div class="cite-chart__bar" style="height: {{ pct }}%"></div>
+      <span class="cite-chart__year">{{ y.year }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <figcaption>Citations per year, from ADS.</figcaption>
+</figure>
+{% endif %}
