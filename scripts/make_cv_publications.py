@@ -55,15 +55,18 @@ JOURNALS = {"ApJ": "The Astrophysical Journal", "ApJS": "The Astrophysical Journ
 
 
 def authors(p):
-    """First three authors, plus A. Laroche if later in the list, then et al."""
-    names = re.sub(r",? et al\..*$", "", p["authors"]).split(", ")
+    """Every author up to and including A. Laroche (at least three), then et al.
+
+    Never skip names before A. Laroche, so the author position reads correctly
+    (update_publications.py keeps every name up to A. Laroche for the same reason).
+    """
+    full = p["authors"]
+    names = re.sub(r",? et al\..*$", "", full).split(", ")
     me = next(i for i, n in enumerate(names) if n.startswith("**"))
-    many = len(names) > 5 or "et al." in p["authors"]
-    shown = names[:3] if many else names
-    if many and me >= 3:
-        shown.append(names[me])
-    text = tex(", ".join(shown) + (", et al." if many else ""))
-    return re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", text)
+    total = int(m.group(1)) if (m := re.search(r"\((\d+) authors\)", full)) else len(names)
+    shown = names[:max(me + 1, 3)]
+    text = ", ".join(shown) + (", et al." if total > len(shown) else "")
+    return re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", tex(text))
 
 
 def venue(p):

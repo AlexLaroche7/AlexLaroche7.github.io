@@ -141,9 +141,8 @@ def build(docs):
         if pos is not None:
             names[pos] = "**A. Laroche**"
         if len(names) > 10:
-            shown = names[:6]
-            if pos is not None and pos >= 6:
-                shown.append(names[pos])
+            # keep every name up to A. Laroche so the author position reads correctly
+            shown = names[:max(6, (pos or 0) + 1)]
             names = shown + [f"et al. ({len(authors)} authors)"]
         pub = d.get("pub", "")
         aid = d.get("_arxiv")
