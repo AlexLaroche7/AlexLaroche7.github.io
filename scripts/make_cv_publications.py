@@ -56,16 +56,15 @@ JOURNALS = {"ApJ": "The Astrophysical Journal", "ApJS": "The Astrophysical Journ
 
 
 def authors(p):
-    """Every author up to and including A. Laroche (at least three), then et al.
+    """First authors, then et al.: up to A. Laroche if in the top four, else the first three.
 
-    Never skip names before A. Laroche, so the author position reads correctly
-    (update_publications.py keeps every name up to A. Laroche for the same reason).
+    Never skip names before A. Laroche, so the author position reads correctly.
     """
     full = p["authors"]
     names = re.sub(r",? et al\..*$", "", full).split(", ")
     me = next(i for i, n in enumerate(names) if n.startswith("**"))
     total = int(m.group(1)) if (m := re.search(r"\((\d+) authors\)", full)) else len(names)
-    shown = names[:max(me + 1, 3)]
+    shown = names[:max(me + 1, 3)] if me < 4 else names[:3]
     text = ", ".join(shown) + (", et al." if total > len(shown) else "")
     return re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", tex(text))
 
