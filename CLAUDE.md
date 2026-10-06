@@ -10,7 +10,7 @@ Jekyll site (AcademicPages fork) published by GitHub Pages from `master` at http
 - `images/misc/`: figures for the Misc essays. `arxiv_submissions.png` is frozen at September 2026 to match the AI essay's text; rebuild it with `python scripts/make_arxiv_plot.py --through 2026-09 --out images/misc/arxiv_submissions.png`. A plain run of the script plots the latest complete month to `arxiv_submissions_<month>.png` in the current directory (needs `numpy` and `matplotlib`).
 - `images/research/`: thumbnails for the research page blocks, plus `wordcloud.png`, built by `scripts/make_wordcloud.py` from the arXiv abstracts of all papers in `_data/publications.yml` (needs `pip install wordcloud`; rerun after a new paper).
 - `images/profile.jpg`: sidebar photo (GitHub avatar). `_sass/_custom.scss` crops it square so it renders as a circle.
-- `files/academic_cv.pdf`: CV, generated; do not edit it by hand. The source lives in an Overleaf project, and `.github/workflows/update-cv.yml` clones it weekly over Overleaf's Git access (`OVERLEAF_TOKEN` repo secret), compiles it with latexmk and commits the PDF if it changed. Run it from the Actions tab after editing the CV.
+- `files/academic_cv.pdf`: CV, generated; do not edit it by hand. The source lives in an Overleaf project, and its publication list is written from `_data/publications.yml` by `scripts/make_cv_publications.py` (which overwrites the project's `publications.tex` at build time). `.github/workflows/update-cv.yml` clones it weekly over Overleaf's Git access (`OVERLEAF_TOKEN` repo secret), compiles it with latexmk and commits the PDF if it changed. Run it from the Actions tab after editing the CV.
 - `googled42309bacdc49a3f.html`: Google Search Console verification. Do not delete.
 
 ## Publications
