@@ -1,0 +1,59 @@
+name: Update CV from Overleaf
+
+on:
+  schedule:
+    - cron: "37 9 * * 1"   # Mondays, 09:37 UTC
+  workflow_dispatch:        # run by hand from the Actions tab
+  pull_request:             # build only, no commit, when this workflow changes
+    paths:
+      - .github/workflows/update-cv.yml
+
+permissions:
+  contents: write
+
+env:
+  OVERLEAF_PROJECT: 62fb96079e7ca6fa423afc59
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    steps:
+      - name: Install git
+        run: command -v git || (apt-get update && apt-get install -y --no-install-recommends git ca-certificates)
+
+      - uses: actions/checkout@v4
+
+      - name: Clone the Overleaf project
+        env:
+          OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
+        run: git clone --depth 1 "https://git:${OVERLEAF_TOKEN}@git.overleaf.com/${OVERLEAF_PROJECT}" /tmp/cv
+
+      - name: Compile
+        working-directory: /tmp/cv
+        run: |
+          if [ -f main.tex ]; then main=main.tex; else main=$(grep -l '^[^%]*\\documentclass' *.tex | head -1); fi
+          if [ -z "$main" ]; then echo "::error::No main .tex file found"; exit 1; fi
+          if grep -q 'fontspec\|fontawesome5\|\\setmainfont' *.tex; then engine=-xelatex; else engine=-pdf; fi
+          echo "Compiling $main with latexmk $engine"
+          if grep -q 'alexlaroche7' *.tex; then echo "::warning::CV source still mentions alexlaroche7"; fi
+          # Date the PDF by the last Overleaf edit so rebuilds of the same source are identical.
+          export SOURCE_DATE_EPOCH=$(git log -1 --format=%ct) FORCE_SOURCE_DATE=1
+          latexmk $engine -interaction=nonstopmode -halt-on-error "$main"
+          cp "${main%.tex}.pdf" "$GITHUB_WORKSPACE/files/academic_cv.pdf"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: academic_cv
+          path: files/academic_cv.pdf
+
+      - name: Commit if changed
+        if: github.event_name != 'pull_request'
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          if [ -z "$(git status --porcelain files)" ]; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add files/academic_cv.pdf
+          git commit -m "Update CV from Overleaf"
+          git push
