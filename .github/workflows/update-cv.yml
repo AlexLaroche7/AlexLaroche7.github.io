@@ -7,6 +7,7 @@ on:
   pull_request:             # build only, no commit, when this workflow changes
     paths:
       - .github/workflows/update-cv.yml
+      - scripts/make_cv_publications.py
 
 permissions:
   contents: write
@@ -19,8 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     container: texlive/texlive:latest
     steps:
-      - name: Install git
-        run: command -v git || (apt-get update && apt-get install -y --no-install-recommends git ca-certificates)
+      - name: Install git and Python
+        run: |
+          if ! command -v git || ! command -v python3; then
+            apt-get update && apt-get install -y --no-install-recommends git ca-certificates python3
+          fi
 
       - uses: actions/checkout@v4
 
@@ -28,6 +32,9 @@ jobs:
         env:
           OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
         run: git clone --depth 1 "https://git:${OVERLEAF_TOKEN}@git.overleaf.com/${OVERLEAF_PROJECT}" /tmp/cv
+
+      - name: Write the publication list from _data/publications.yml
+        run: python3 scripts/make_cv_publications.py /tmp/cv/publications.tex
 
       - name: Compile
         working-directory: /tmp/cv
