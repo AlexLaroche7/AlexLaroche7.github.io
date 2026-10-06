@@ -113,3 +113,6 @@ h1, h2, h3, h4, .page__title { color: $darker-gray; }
 /* icons that default to near-black */
 .author__urls .fa-map-marker, .author__urls .fa-map-marker-alt { color: $text-color; }
 .page__footer { border-top: 1px solid $border-color; }
+
+/* training log: keep each week's dates on one line */
+.training-table td:nth-child(2) { white-space: nowrap; }
