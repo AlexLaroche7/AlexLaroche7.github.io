@@ -1,4 +1,0 @@
-# Papers the CV lists under "Major Contributions" instead of "Co-Authored Publications".
-# One arXiv id or ADS bibcode per line. Edited by hand; read by scripts/make_cv_publications.py.
-- "2609.05616"   # Géron et al., unresolved binaries in the Rubin era
-- "2607.20611"   # Grondin et al., pre- and post-common envelope binaries in Alessi 12
